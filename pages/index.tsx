@@ -45,10 +45,11 @@ const Home: NextPage<{
       <Head>
         <title>AirBnB Clone</title>
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
       </Head>
 
       {/* Header */}
-      <Header />
+      <Header placeholder={undefined} />
       {/* Banner */}
       <Banner />
 
@@ -58,9 +59,9 @@ const Home: NextPage<{
 
           {/* Display each item in the exploreData array */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {exploreData?.map(({ id, img, distance, location }) => (
+            {exploreData?.map(({ img, distance, location }) => (
               <SmallCard
-                key={id}
+                key={img}
                 img={img}
                 location={location}
                 distance={distance}
